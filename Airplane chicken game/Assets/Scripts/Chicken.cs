@@ -22,13 +22,16 @@ public class Chicken : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.W) && (gameManager.chicken.transform.position.y <= 3 && gameManager.chicken.transform.position.y >= -3))
-        {
-            gameManager.chicken.transform.position = new Vector3 (-8.38f,gameManager.chicken.transform.position.y+0.5f,0);
-            
-        }
+    if(Input.GetKeyDown(KeyCode.W) && (gameManager.chicken.transform.position.y <= 3 && gameManager.chicken.transform.position.y >= -3))
+        Jump();
+  
+    
     }
+    void Jump()
+    {
+        gameManager.chicken.transform.position = new Vector3 (gameManager.chicken.transform.position.x,(gameManager.chicken.transform.position.y+0.9f),0);       
 
+    }
 }
 
 
